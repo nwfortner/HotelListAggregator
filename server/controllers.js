@@ -39,10 +39,10 @@ module.exports = {
         }
       }
       if (parsedHotelData[i].length) {
-        mergedResult.splice(mergedResult.length, 0, ...parsedHotelData[i]);
+        mergedResult.push(...parsedHotelData[i]);
       }
       if (tempMergedResult.length) {
-        mergedResult.splice(mergedResult.length, 0, ...tempMergedResult);
+        mergedResult.push(...tempMergedResult);
       }
       if (i < parsedHotelData.length - 1) {
         tempMergedResult = mergedResult;
