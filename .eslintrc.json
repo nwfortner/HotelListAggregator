@@ -1,0 +1,17 @@
+{
+    "extends": "airbnb",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+    "rules": {
+      "no-console": "off",
+      "no-multiple-empty-lines": "off",
+      "import/newline-after-import": "off",
+      "no-trailing-spaces": "off",
+      "func-names": "off",
+      "no-plusplus": "off",
+      "comma-dangle": "off"
+    }
+}
