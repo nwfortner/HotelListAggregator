@@ -1,14 +1,10 @@
 const router = require('express').Router();
-const { hotelSearchHandler } = require('./handler.js');
+const { hotelSearchHandler, catchAllRoutesHandler } = require('./handler.js');
 
 // Handle get request on route /hotels/search
 router.get('/hotels/search', hotelSearchHandler);
 
-// Handle all other requests made to this API and return error 
-router.all('*', (req, res) => {
-  res.status(400).json({
-    error: 'This api only serves request to route "GET /hotels/search". Please try again.'
-  });
-});
+// Handle all other requests made to this API and respond with error
+router.all('*', catchAllRoutesHandler);
 
 module.exports = router;
