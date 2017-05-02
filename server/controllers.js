@@ -9,10 +9,16 @@ module.exports = {
   async requestHotelData() {
     let hotelData;
     try {
+
+      // Await return of all scraper API calls maid asynchronously
+
       hotelData = await Promise.all(
         providers.map(provider => requestPromise(`http://localhost:9000/scrapers/${provider}`))
       );
     } catch (error) {
+
+      // Catch any errors that may occur
+
       hotelData = error;
     }
     return hotelData;
